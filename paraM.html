@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Un Mensaje Especial</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+
+  /* Reset básico */
+  * {
+    box-sizing: border-box;
+  }
+  body {
+    margin: 0;
+    background: linear-gradient(135deg, #e007c0 0%, #e007c0 100%);
+    font-family: 'Inter', sans-serif;
+    height: 100vh; /* Mantener el alto completo */
+    color: #f4ebeb;
+    display: flex; /* Mantener el flex para centrar el contenedor */
+    justify-content: center; /* Centrar horizontalmente */
+    align-items: flex-start; /* Alinear al inicio verticalmente */
+    padding: 20px; /* Agregar un poco de padding */
+  }
+
+  /* Contenedor sin fondo ni sombra, tamaño reducido en los costados */
+  .container {
+    padding: 24px 16px;
+    max-width: 600px; /* Aumentar el ancho máximo para que no esté tan estrecho */
+    width: 100%;
+    text-align: center; /* Alinear el texto al centro */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centrar los elementos dentro del contenedor */
+    border-radius: 0;
+    box-shadow: none;
+    background: transparent;
+    margin-top: 20px; /* Agregar margen superior para evitar corte */
+  }
+
+  h1 {
+    margin-bottom: 16px;
+    font-weight: 700;
+    font-size: 1.7rem;
+  }
+
+  p {
+    font-size: 1.1rem;
+    line-height: 1.5;
+    margin-bottom: 28px;
+    user-select: none;
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 6px;
+    margin-bottom: 28px;
+  }
+
+  /* Botones estilo moderno minimalista */
+  .buttons {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+  }
+
+  button {
+    cursor: pointer;
+    border: none;
+    border-radius: 6px;
+    padding: 12px 20px;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    user-select: none;
+    position: relative;
+    outline-offset: 2px;
+    min-width: 100px;
+  }
+
+  button.continuar {
+    background: #475be8;
+    color: white;
+  }
+
+  button.continuar:hover,
+  button.continuar:focus {
+    background: #2c3dbf;
+    box-shadow: 0 4px 16px rgba(71,91,232,0.5);
+    outline: none;
+  }
+
+  button.no-continuar {
+    background: #e55353;
+    color: white;
+  }
+
+  button.no-continuar:hover,
+  button.no-continuar:focus {
+    background: #b63b3b;
+    box-shadow: 0 4px 16px rgba(229,83,83,0.5);
+    outline: none;
+  }
+
+  /* Estilo para botón que se mueve */
+  button.no-continuar.moving {
+    position: absolute !important;
+    transition: left 0.4s ease, top 0.4s ease;
+  }
+</style>
+</head>
+<body>
+  <div class="container" id="page1" aria-live="polite">
+    <h1 id="title1">Hice esta pagina solo para vos :)</h1>
+    <p id="text1">
+      La verdad, me costó bastante hacer esta página, pero siento que valía la pena intentarlo.
+      Hay algo que quiero decirte desde hace mucho tiempo, pero no sabia cómo…
+      Así que decidí hacerlo de esta forma.
+
+      (La verdad, no creo que me anime a decírtelo en persona... jaja, perdón 😅).
+
+      Ojalá te guste, porque le puse muchas ganas (y nervios jaja).
+
+      ¿Seguimos?
+    </p>
+    <img src="paraMaca/ChatGPT Image 15 jun 2025, 19_38_36.png" alt="Imagen decorativa con fondo rojo y texto imagen uno ejemplo" id="img1" />
+    <div class="buttons">
+      <button class="continuar" id="continueBtn1">Seguir</button>
+      <button class="no-continuar" id="noContinueBtn1">No quiero Seguir >:(</button>
+    </div>
+  </div>
+
+ <div class="container" id="noContinuePage" style="display:none;" aria-live="polite">
+    <h1>No quieres continuar?</h1>
+    <p>Como que no pero si me esforce para que quede bonito para vos.</p>
+    <img src="paraMaca/unnamed.png" alt="Imagen decorativa con fondo rojo y texto imagen dos ejemplo" id="img2" />
+    <p>Aún puedes decidir avanzar si quieres.</p>
+    <div class="buttons">
+      <button class="continuar" id="continueFromNoContinue">Si quiero seguir</button>
+      <button class="no-continuar" id="noContinueBtnMove">No quiero continuar</button>
+    </div>
+  </div>
+
+  <div class="container" id="page2" style="display:none;" aria-live="polite">
+    <h1 id="title2">Estoy muy enamorado de vos.</h1>
+    <p id="text2">
+      Realmente no sabés lo mucho que te aprecio.
+
+Desde que te conocí, no puedo dejar de pensar en vos...
+(y la verdad, tampoco quiero dejar de hacerlo).
+
+Sos la persona más maravillosa y hermosa que conozco.
+Y no hablo solo de lo físico —que obviamente también—
+sino que todo en vos me parece perfecto…
+
+A veces siento que sos demasiado perfecta para alguien como yo.
+
+Te voy a ser honesto:
+me gustás… y me gustás mucho.
+
+Me gustás por tantas razones que podría escribirte un libro.
+Pero como no quiero cansarte (todavía jaja),
+acá voy a tratar de contarte al menos algunas de esas razones..
+    </p>
+    <img src="paraMaca/pngtree-anime-couple-holding-red-roses-png-image_14814349.png" alt="Imagen decorativa con fondo rojo y texto imagen dos ejemplo" id="img2" />
+    <p id="text3">
+      ¿Querés saber por qué me gustás tanto?
+Entonces sigamos 💌
+    </p>
+    <div class="buttons">
+      <button class="continuar" id="continueBtn2">Continuar</button>
+    </div>
+  </div>
+  
+  <div class="container" id="page3" style="display:none;" aria-live="polite">
+    <h1 id="title3">Bueno empecemos jsjsj</h1>
+    <p id="text3">
+      Me encantan tus ojos.
+Me encanta tu sonrisa… tan hermosa.<br />
+
+También me encanta tu mirada, y cómo me mirás.<br />
+Tu forma de ser me fascina.<br />
+
+Me encantan tus manos… porque encajan perfecto con las mías.<br />
+
+Amo el sonido de tu voz.<br />
+
+Me encanta lo directa y honesta que sos,
+porque yo a veces soy medio tonto y no entiendo las cosas rápido…<br />
+
+Tenés unos gustos maravillosos,
+y me encanta que los hayas compartido conmigo.
+(Ahora pienso en vos cada vez que los veo, jaja.)<br />
+
+Me encanta que me mandes tus fotos.<br />
+Me encanta hablar con vos
+
+Con solo un mensaje tuyo,
+ya me alegrás el día entero.<br />
+
+Me gusta estar con vos.<br />
+
+Y la verdad…
+me gusta todo de vos.
+    </p>
+    <p id="text3">
+      Podría seguir, pero sería demasiado largo, jaja.
+
+Aunque creo que ya sabés a dónde quiero llegar…
+
+Pero antes, hay algo que tenés que saber:<br />
+
+Para mí, vos sos la más perfecta.
+
+Nadie está ni va a estar a tu nivel.
+(La verdad, no hay punto de comparación.)
+    </p>
+    <img src="paraMaca/ChatGPT Image 16 jun 2025, 02_37_23.png" alt="Imagen azul decorativa antes de la confesión" />
+     </p>
+    <p id="text3">
+     Bueno... una última cosa antes de pasar a lo siguiente.
+
+También me gustas porque nunca me juzgaste, porque siempre fuiste honesta conmigo.
+
+Me das esa seguridad que siempre estuve buscando, y haces que mi cabeza —por fin— se calme.
+
+La verdad... no sé cómo terminé tan enamorado de vos, pero lo único que sé es que jamás me arrepentiré de haberme acercado a vos en ese bar.
+
+Conocerte fue lo más maravilloso que me pudo pasar.
+
+Todavía recuerdo ese día… estabas tan hermosa (como todos los días) y yo estaba tan nervioso, jajaj.
+
+El recuerdo de ese día, y todo lo que sentí, siempre lo voy a guardar con cariño.<br /><br />
+(pdt:Esta es mi foto favorita de nosotros y me gustaria tener mas fotos juntos :) )
+    </p>
+    <img src="paraMaca/Imagen de WhatsApp 2025-06-02 a las 22.28.38_9d5d6932.jpg" alt="Imagen azul decorativa mensaje previo a la confesión" />
+     <p id="text3">
+      Bueno… eso era lo último que quería decirte con el corazón en la mano.
+
+Pero antes de ponerme más cursi, vamos a cambiar un poquito el tono…
+    </p>
+    <div class="buttons">
+      <button class="continuar" id="continueBtn3">Continuar</button>
+    </div>
+  </div>
+
+  <div class="container" id="page4" style="display:none;" aria-live="polite">
+    <h1 id="title4">Ventajas de estar conmigo</h1>
+    <p id="text4">
+      La verdad… no hay ninguna ventaja jsjsjs.
+No soy perfecto, ni tengo grandes cosas para presumir.</button>
+
+Pero te prometo que voy a hacer todo lo posible para que seas feliz.
+Entregaría todo de mí por vos.
+    </p>
+    <p id="text3">
+     
+    </p>
+    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/e60c51a6-6cf2-43f3-9b95-ac631f1bc233.png" alt="Imagen azul decorativa mensaje previo a la confesión" />
+    <div class="buttons">
+      <button class="continuar" id="continueBtn4">Continuar</button>
+    </div>
+  </div>
+
+  <div class="container" id="page5" style="display:none;" aria-live="polite">
+    <h1 id="title5">Mensaje 5</h1>
+    <p id="text5">
+      ¿Quieres ser mi novia?
+    </p>
+    <img src="paraMaca/a3ba20d67182cbf83f3288e26aadbda7.gif" alt="Imagen azul decorativa mensaje previo a la confesión" />
+    <div class="buttons">
+      <button class="continuar" id="yesBtn">Sí, quiero</button>
+      <button class="no-continuar" id="noBtn">No, gracias</button>
+    </div>
+    <p>(pdt:Tengo un regalo para vos si decis que si ;) )</p>
+  </div>
+
+  <div class="container" id="yesPage" style="display:none;" aria-live="polite">
+    <h1>¡Me haces feliz!</h1>
+    <p>Gracias por decir que sí, este es el comienzo de algo muy especial.</p>
+  </div>
+
+  <div class="container" id="noPage" style="display:none;" aria-live="polite">
+    <h1>Entiendo</h1>
+    <p>Aprecio tu sinceridad y siempre tendrás un lugar especial en mi corazón.</p>
+  </div>
+
+<script>
+  const pages = [
+    document.getElementById('page1'),
+    document.getElementById('noContinuePage'),
+    document.getElementById('page2'),
+    document.getElementById('page3'),
+    document.getElementById('page4'),
+    document.getElementById('page5'),
+  ];
+  const yesPage = document.getElementById('yesPage');
+  const noPage = document.getElementById('noPage');
+
+  // Botones
+  const continueBtn1 = document.getElementById('continueBtn1');
+  const noContinueBtn1 = document.getElementById('noContinueBtn1');
+  const continueFromNoContinue = document.getElementById('continueFromNoContinue');
+  const noContinueBtnMove = document.getElementById('noContinueBtnMove');
+  const continueBtn2 = document.getElementById('continueBtn2');
+  const continueBtn3 = document.getElementById('continueBtn3');
+  const continueBtn4 = document.getElementById('continueBtn4');
+  const yesBtn = document.getElementById('yesBtn');
+  const noBtn = document.getElementById('noBtn');
+
+  let currentPage = 0;
+
+  function showPage(index) {
+    pages.forEach(page => page.style.display = 'none');
+    yesPage.style.display = 'none';
+    noPage.style.display = 'none';
+
+    if(index >= 0 && index < pages.length){
+      pages[index].style.display = 'flex';
+      currentPage = index;
+    }
+  }
+
+  function moveButtonRandomly(button) {
+    const btnRect = button.getBoundingClientRect();
+    const padding = 16;
+    const maxX = window.innerWidth - btnRect.width - padding;
+    const maxY = window.innerHeight - btnRect.height - padding;
+    const randomX = Math.floor(Math.random() * maxX);
+    const randomY = Math.floor(Math.random() * maxY);
+    button.style.position = 'absolute';
+    button.style.left = randomX + 'px';
+    button.style.top = randomY + 'px';
+    button.classList.add('moving');
+  }
+
+  // Eventos para botón continuar y no continuar en página 1
+  continueBtn1.addEventListener('click', () => showPage(2)); // Va a página2
+  noContinueBtn1.addEventListener('click', () => showPage(1)); // Va a noContinuePage
+
+  // En página noContinuePage: botón continuar avanza a página2, botón noContinuar se mueve
+  continueFromNoContinue.addEventListener('click', () => showPage(2));
+  noContinueBtnMove.addEventListener('click', (e) => moveButtonRandomly(e.target));
+
+  // Páginas intermedias sólo botón continuar avanza
+  continueBtn2.addEventListener('click', () => showPage(3));
+  continueBtn3.addEventListener('click', () => showPage(4));
+  continueBtn4.addEventListener('click', () => showPage(5));
+
+  // En pagina 5 la pregunta con botones sí y no
+  yesBtn.addEventListener('click', () => {
+    pages.forEach(p => p.style.display = 'none');
+    yesPage.style.display = 'flex';
+  });
+
+  noBtn.addEventListener('click', () => {
+    pages.forEach(p => p.style.display = 'none');
+    noPage.style.display = 'flex';
+  });
+
+  // Inicializar mostrando la página 1
+  showPage(0);
+
+  // Navegación con teclado para avanzar con Enter o Space
+  document.addEventListener('keydown', (e) => {
+    if((e.key === 'Enter' || e.key === ' ') && document.activeElement.tagName !== 'BUTTON') {
+      if(currentPage < pages.length - 1){
+        showPage(currentPage + 1);
+      }
+    }
+  });
+</script>
+</body>
+</html>
+
+
+
